@@ -1,7 +1,6 @@
 import styles from './FilmCard.module.scss';
 
-import { EmptyStar } from 'components/icons/EmptyStar';
-import { FulfilledStar } from 'components/icons/FulfilledStar';
+import { EmptyStar, FulfilledStar } from 'components/icons';
 
 import { romanize } from 'helpers/romanize';
 

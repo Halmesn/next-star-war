@@ -1,7 +1,6 @@
 import styles from './Footer.module.scss';
 
-import { GithubIcon } from 'components/icons/GithubIcon';
-import { LinkedInIcon } from 'components/icons/LinkedInIcon';
+import { GithubIcon, LinkedInIcon } from 'components/icons';
 
 export default function Footer() {
   return (

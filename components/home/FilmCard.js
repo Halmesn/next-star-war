@@ -7,6 +7,7 @@ import { romanize } from 'helpers/romanize';
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function FilmCard({ film, favorites, setFavorites }) {
   const [isStared, setIsStared] = useState(false);
@@ -19,8 +20,7 @@ export default function FilmCard({ film, favorites, setFavorites }) {
     setIsStared(isFavorite);
   }, [favorites]);
 
-  const toggleStar = (e) => {
-    e.stopPropagation();
+  const toggleStar = () => {
     const newFavorites = [...favorites];
 
     if (!isStared) {
@@ -39,17 +39,21 @@ export default function FilmCard({ film, favorites, setFavorites }) {
 
   return (
     <div className={styles.card}>
-      <Image
-        src={`/images/posters/${film.episode_id}.jpg`}
-        alt={film.title}
-        width={275}
-        height={380}
-      />
-      <div className={styles.title}>
-        <p>
-          Episode {romanize(film.episode_id)}: {film.title}
-        </p>
-      </div>
+      <Link href={`/films/${film.episode_id}`}>
+        <a>
+          <Image
+            src={`/images/posters/${film.episode_id}.jpg`}
+            alt={film.title}
+            width={275}
+            height={380}
+          />
+          <div className={styles.title}>
+            <p>
+              Episode {romanize(film.episode_id)}: {film.title}
+            </p>
+          </div>{' '}
+        </a>
+      </Link>
       <div onClick={toggleStar}>
         {isStared ? <FulfilledStar /> : <EmptyStar />}
       </div>

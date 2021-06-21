@@ -3,7 +3,6 @@ import styles from './HomeContent.module.scss';
 import FilmCard from 'components/home/FilmCard';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 
 export default function HomeContent({ films }) {
   const [favorites, setFavorites] = useState([]);
@@ -20,15 +19,11 @@ export default function HomeContent({ films }) {
   const renderFilmLists = (filmList) =>
     filmList.map((film) => (
       <li key={film.title}>
-        <Link href={`/films/${film.episode_id}`}>
-          <a>
-            <FilmCard
-              film={film}
-              favorites={favorites}
-              setFavorites={setFavorites}
-            />
-          </a>
-        </Link>
+        <FilmCard
+          film={film}
+          favorites={favorites}
+          setFavorites={setFavorites}
+        />
       </li>
     ));
 

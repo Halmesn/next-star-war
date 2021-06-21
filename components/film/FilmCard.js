@@ -1,34 +1,37 @@
 import styles from './FilmCard.module.scss';
 
+import { EmptyStar } from 'components/icons/EmptyStar';
+import { FulfilledStar } from 'components/icons/FulfilledStar';
+
+import { romanize } from 'helpers/romanize';
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-export default function FilmCard({ film }) {
-  function romanize(num) {
-    let lookup = {
-        M: 1000,
-        CM: 900,
-        D: 500,
-        CD: 400,
-        C: 100,
-        XC: 90,
-        L: 50,
-        XL: 40,
-        X: 10,
-        IX: 9,
-        V: 5,
-        IV: 4,
-        I: 1,
-      },
-      roman = '',
-      i;
-    for (i in lookup) {
-      while (num >= lookup[i]) {
-        roman += i;
-        num -= lookup[i];
-      }
+export default function FilmCard({ film, favorites, setFavorites }) {
+  const [isStared, setIsStared] = useState(false);
+
+  useEffect(() => {
+    const isFavorite = favorites.some(
+      ({ episode_id }) => film.episode_id === episode_id
+    );
+    setIsStared(isFavorite);
+  }, [favorites]);
+
+  const toggleStar = () => {
+    const newFavorites = [...favorites];
+
+    if (!isStared) {
+      newFavorites.push(film);
+      setFavorites(newFavorites);
+    } else {
+      const spliceIndex = newFavorites.indexOf(film);
+      newFavorites.splice(spliceIndex, 1);
+      setFavorites(newFavorites);
     }
-    return roman;
-  }
+
+    setIsStared(!isStared);
+  };
 
   return (
     <div className={styles.card}>
@@ -42,6 +45,9 @@ export default function FilmCard({ film }) {
         <p>
           Episode {romanize(film.episode_id)}: {film.title}
         </p>
+      </div>
+      <div onClick={toggleStar}>
+        {isStared ? <FulfilledStar /> : <EmptyStar />}
       </div>
     </div>
   );

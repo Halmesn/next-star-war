@@ -3,7 +3,10 @@ import styles from './Detail.module.scss';
 import { romanize } from 'helpers/romanize';
 import { FilmContext } from 'pages/films/[filmId]';
 
-import { useContext } from 'react';
+import swapi from '/axios';
+import axios from 'axios';
+
+import { useContext, useState } from 'react';
 import Image from 'next/image';
 
 export default function Detail() {
@@ -24,12 +27,49 @@ export default function Detail() {
     { category: 'species', data: speciesData },
   ];
 
+  const [hoverCharacter, setHoverCharacter] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onCharacterHover = async (id) => {
+    setIsLoading(true);
+
+    const { data: peopleData } = await swapi.get(`/people/${id}`);
+    const { homeworld } = peopleData;
+
+    const { data: homeWorldData } = await axios.get(homeworld);
+    const characterData = { ...peopleData, home_world: homeWorldData.name };
+
+    setHoverCharacter(characterData);
+    setIsLoading(false);
+  };
+
   const renderDataItem = filmData.map(({ category, data }) => {
     const formatInnerHTML = (string) =>
       string[0].toUpperCase() + string.slice(1);
+    const renderTooltip = () => (
+      <span>
+        Name: {hoverCharacter.name}
+        <br />
+        Birth Year: {hoverCharacter.birth_year}
+        <br />
+        Height: {hoverCharacter.height}cm
+        <br />
+        Mass: {hoverCharacter.mass}kg
+        <br />
+        Gender: {hoverCharacter.gender}
+        <br />
+        Hair Color: {hoverCharacter.hair_color}
+        <br />
+        Skin Color: {hoverCharacter.skin_color}
+        <br />
+        Eye Color: {hoverCharacter.eye_color}
+        <br />
+        Home World: {hoverCharacter.home_world}
+      </span>
+    );
 
     const renderList = data.map(({ name, id }) => (
-      <li key={id}>
+      <li key={id} onMouseEnter={() => onCharacterHover(id)}>
         <Image
           src={`/images/${category}/${id}.jpg`}
           alt={name}
@@ -37,6 +77,9 @@ export default function Detail() {
           height={50}
         />
         <p>{name}</p>
+        <span className={styles.tooltip}>
+          {!isLoading ? renderTooltip() : 'Loading...'}
+        </span>
       </li>
     ));
 

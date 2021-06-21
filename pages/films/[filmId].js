@@ -10,13 +10,9 @@ export const FilmContext = createContext();
 import { getFilmData } from 'helpers/filmHelpers';
 
 export default function FilmDetails(props) {
-  const providerValue = {
-    ...props,
-  };
-
   return (
     <div style={{ width: '80%', margin: ' auto' }}>
-      <FilmContext.Provider value={providerValue}>
+      <FilmContext.Provider value={{ ...props }}>
         <FilmNav />
         <Detail />
       </FilmContext.Provider>

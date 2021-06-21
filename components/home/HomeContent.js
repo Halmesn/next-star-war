@@ -1,20 +1,34 @@
 import styles from './HomeContent.module.scss';
 
-import FilmCard from 'components/film/FilmCard';
+import FilmCard from 'components/home/FilmCard';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function HomeContent({ films }) {
   const [favorites, setFavorites] = useState([]);
 
+  // get local favorite list
+  useEffect(
+    () =>
+      setFavorites(
+        JSON.parse(window.localStorage.getItem('sw-favorites')) || []
+      ),
+    []
+  );
+
   const renderFilmLists = (filmList) =>
     filmList.map((film) => (
       <li key={film.title}>
-        <FilmCard
-          film={film}
-          favorites={favorites}
-          setFavorites={setFavorites}
-        />
+        <Link href={`/films/${film.episode_id}`}>
+          <a>
+            <FilmCard
+              film={film}
+              favorites={favorites}
+              setFavorites={setFavorites}
+            />
+          </a>
+        </Link>
       </li>
     ));
 

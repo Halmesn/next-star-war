@@ -1,0 +1,16 @@
+.card {
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 14%), 0 2px 2px 0 rgb(0 0 0 / 10%),
+    0 1px 5px 0 rgb(0 0 0 / 8%);
+  cursor: pointer;
+}
+
+.title {
+  padding: 1.6rem;
+
+  p {
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.54);
+  }
+}

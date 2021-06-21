@@ -30,7 +30,8 @@ export default function Detail() {
   const [hoverCharacter, setHoverCharacter] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
-  const onCharacterHover = async (id) => {
+  const onCharacterHover = async (id, category) => {
+    if (category !== 'characters') return;
     setIsLoading(true);
 
     const { data: peopleData } = await swapi.get(`/people/${id}`);
@@ -69,7 +70,7 @@ export default function Detail() {
     );
 
     const renderList = data.map(({ name, id }) => (
-      <li key={id} onMouseEnter={() => onCharacterHover(id)}>
+      <li key={id} onMouseEnter={() => onCharacterHover(id, category)}>
         <Image
           src={`/images/${category}/${id}.jpg`}
           alt={name}
@@ -77,9 +78,11 @@ export default function Detail() {
           height={50}
         />
         <p>{name}</p>
-        <span className={styles.tooltip}>
-          {!isLoading ? renderTooltip() : 'Loading...'}
-        </span>
+        {category === 'characters' && (
+          <span className={styles.tooltip}>
+            {!isLoading ? renderTooltip() : 'Loading...'}
+          </span>
+        )}
       </li>
     ));
 

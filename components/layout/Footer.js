@@ -18,7 +18,7 @@ export default function Footer() {
           </a>
         </div>
         <p className={styles.copyright}>
-          Design and developed by{' '}
+          Designed and developed by{' '}
           <a href="https://adrianli.vercel.app/" target="_blank">
             Adrian Li
           </a>{' '}

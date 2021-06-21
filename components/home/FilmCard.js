@@ -17,7 +17,7 @@ export default function FilmCard({ film, favorites, setFavorites }) {
       ({ episode_id }) => film.episode_id === episode_id
     );
     setIsStared(isFavorite);
-  }, [favorites]);
+  }, [favorites, film.episode_id]);
 
   const toggleStar = () => {
     const newFavorites = [...favorites];

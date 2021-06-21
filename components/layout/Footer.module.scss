@@ -1,0 +1,50 @@
+.footer {
+  font-size: 1.2rem;
+  color: white;
+  width: 80%;
+  margin: 0 auto;
+  height: 10rem;
+
+  a {
+    color: #81d4fa;
+  }
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2.4rem;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+
+  span {
+    text-transform: uppercase;
+    margin-right: 1.2rem;
+    letter-spacing: 0.3rem;
+  }
+
+  a {
+    margin-right: 1.2rem;
+    display: flex;
+    align-items: center;
+
+    svg {
+      height: 1.2rem;
+      width: 1.2rem;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.copyright {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+.disclaimer {
+  text-align: center;
+  padding-bottom: 1.2rem;
+}

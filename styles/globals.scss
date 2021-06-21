@@ -1,9 +1,40 @@
-html,
-body {
-  padding: 0;
+*,
+*::after,
+*::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'biko', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'jedi';
+  src: url('/fonts/Starjedi.ttf');
+}
+
+@font-face {
+  font-family: 'jedi-outline';
+  src: url('/fonts/Starjhol.ttf');
+}
+
+@font-face {
+  font-family: 'jedi-subtitle';
+  src: url('/fonts/Typo Grotesk Demo.otf');
+}
+
+@font-face {
+  font-family: 'biko';
+  src: url('/fonts/Biko_Regular.otf');
 }
 
 a {
@@ -11,6 +42,9 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }

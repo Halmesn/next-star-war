@@ -1,5 +1,5 @@
 import FilmNav from 'components/film/FilmNav';
-import Content from 'components/film/Content';
+import Detail from 'components/film/Detail';
 
 import swapi from '/data/swapi';
 
@@ -7,19 +7,18 @@ import { createContext } from 'react';
 
 export const FilmContext = createContext();
 
-import { getCharactersData } from 'helpers/filmHelpers';
+import { getFilmData } from 'helpers/filmHelpers';
 
-export default function FilmDetails({ film, charactersData }) {
+export default function FilmDetails(props) {
   const providerValue = {
-    film,
-    charactersData,
+    ...props,
   };
 
   return (
     <div style={{ width: '80%', margin: ' auto' }}>
       <FilmContext.Provider value={providerValue}>
         <FilmNav />
-        <Content />
+        <Detail />
       </FilmContext.Provider>
     </div>
   );
@@ -29,19 +28,30 @@ export async function getStaticProps({ params }) {
   const filmId = +params.filmId;
   // swapi give wrong sort on this, so I have to convert it to the correct one
   const { data: film } = await swapi.get(
-    `/films/${filmId < 3 ? filmId + 3 : filmId - 3}/`
+    `/films/${filmId <= 3 ? filmId + 3 : filmId - 3}/`
   );
 
   const { characters, planets, vehicles, starships, species } = film;
 
-  const charactersData = await getCharactersData(characters);
+  const charactersData = await getFilmData(characters);
+  const planetsData = await getFilmData(planets);
+  const vehiclesData = await getFilmData(vehicles);
+  const starShipsData = await getFilmData(starships);
+  const speciesData = await getFilmData(species);
 
   if (!film) {
     return { notFound: true };
   }
 
   return {
-    props: { film, charactersData },
+    props: {
+      film,
+      charactersData,
+      planetsData,
+      vehiclesData,
+      starShipsData,
+      speciesData,
+    },
   };
 }
 

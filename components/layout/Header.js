@@ -6,7 +6,7 @@ export default function Header() {
       <nav>
         <div className={styles.logo}>
           <h2 className={styles.title}>Star</h2>
-          <p className={styles.subtitle}>A VISUAL GUIDE</p>
+          <p className={styles.subtitle}>A VISUAL DATABASE</p>
           <h2 className={styles.title}>Wars</h2>
         </div>
       </nav>

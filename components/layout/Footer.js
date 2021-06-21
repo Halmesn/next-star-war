@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
         <p className={styles.copyright}>
           Design and developed by{' '}
-          <a href="adrianli.vercel.app" target="_blank">
+          <a href="https://adrianli.vercel.app/" target="_blank">
             Adrian Li
           </a>{' '}
           @2021
@@ -31,7 +31,12 @@ export default function Footer() {
         Ltd. Related data were freely collected from{' '}
         <a href="https://swapi.dev/" target="_blank">
           SWAPI
+        </a>{' '}
+        and{' '}
+        <a href="http://starwars.wikia.com/wiki/Main_Page" target="_blank">
+          Wookiepedia
         </a>
+        .
       </p>
     </footer>
   );

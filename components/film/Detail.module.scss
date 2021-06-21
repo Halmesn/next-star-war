@@ -17,14 +17,19 @@
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+
+    span {
+      font-weight: bold;
+      font-size: 1.7rem;
+    }
   }
 }
 
 .gridContainer {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 2.5rem;
   margin: 4rem 0;
 }
 

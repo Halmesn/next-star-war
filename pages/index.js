@@ -1,6 +1,6 @@
 import HomeContent from 'components/home/HomeContent';
 
-import swapi from '/data/swapi';
+import swapi from '/axios';
 
 export default function HomePage({ sortedResults }) {
   return <HomeContent films={sortedResults} />;

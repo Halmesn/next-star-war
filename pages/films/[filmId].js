@@ -1,7 +1,7 @@
 import FilmNav from 'components/film/FilmNav';
 import Detail from 'components/film/Detail';
 
-import swapi from '/data/swapi';
+import swapi from '/axios';
 
 import { createContext } from 'react';
 

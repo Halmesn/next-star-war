@@ -7,9 +7,9 @@
 
 ## 📚 SWAPI, React and NextJS code test
 
-**Challenge:Consume the Star Wars API (SWAPI) using React, NextJS and other JS technologies you deem fit.**
+**Challenge: Consume the Star Wars API (SWAPI) using React, NextJS and other JS technologies you deem fit.**
 
-**Acceptance criteria**
+**Acceptance criteria:**
 
 - Home screen contains a list of films pulled from the SWAPI
 - List should be searchable
@@ -26,4 +26,4 @@
 - Use Flexbox or CSS grid for layouts - avoid Bootstrap etc
 - Host the finished project on Vercel or similar
 
-**I finished this Challenge less than one day**
+**I finished this Challenge less than one day🚀**

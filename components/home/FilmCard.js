@@ -43,7 +43,7 @@ export default function FilmCard({ film, favorites, setFavorites }) {
           <Image
             src={`/images/posters/${film.episode_id}.jpg`}
             alt={film.title}
-            width={275}
+            width={280}
             height={380}
           />
           <div className={styles.title}>

@@ -2,7 +2,6 @@ export const EmptyStar = () => (
   <svg
     aria-hidden="true"
     focusable="false"
-    data-prefix="far"
     data-icon="star"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +18,6 @@ export const FulfilledStar = () => (
   <svg
     aria-hidden="true"
     focusable="false"
-    data-prefix="fas"
     data-icon="star"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +34,6 @@ export const GithubIcon = () => (
   <svg
     aria-hidden="true"
     focusable="false"
-    data-prefix="fab"
     data-icon="github"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +50,6 @@ export const LinkedInIcon = () => (
   <svg
     aria-hidden="true"
     focusable="false"
-    data-prefix="fab"
     data-icon="linkedin"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +58,21 @@ export const LinkedInIcon = () => (
     <path
       fill="currentColor"
       d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+    ></path>
+  </svg>
+);
+
+export const SearchIcon = () => (
+  <svg
+    focusable="false"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    role="img"
+    data-icon="search"
+  >
+    <path
+      fill="currentColor"
+      d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
     ></path>
   </svg>
 );

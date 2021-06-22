@@ -6,10 +6,11 @@ export default function HomePage({ sortedResults }) {
   return <HomeContent films={sortedResults} />;
 }
 
-// getStaticProps are better for this api, because it won't change'
+// I use getStaticProps because the data here(films) doesn't change'
 export async function getStaticProps() {
   const { data } = await swapi.get('/films/');
   const { results } = data;
+
   // sort films by their episode
   const sortedResults = results.sort((a, b) => a.episode_id - b.episode_id);
 

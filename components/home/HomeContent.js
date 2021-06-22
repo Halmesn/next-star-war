@@ -23,8 +23,6 @@ export default function HomeContent({ films }) {
     []
   );
 
-  console.log(searchResults);
-
   // debounceInput
   useEffect(() => {
     const timer = setTimeout(() => setDebounceInput(searchInput), 400);

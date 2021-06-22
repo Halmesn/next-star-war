@@ -47,6 +47,7 @@ export default function Detail() {
   const renderDataItem = filmData.map(({ category, data }) => {
     const formatInnerHTML = (string) =>
       string[0].toUpperCase() + string.slice(1);
+
     const renderTooltip = () => (
       <span>
         Name: {hoverCharacter.name}

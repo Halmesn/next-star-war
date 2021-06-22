@@ -2,12 +2,10 @@ import FilmNav from 'components/film/FilmNav';
 import Detail from 'components/film/Detail';
 
 import swapi from '/axios';
+import { getFilmData } from 'helpers/filmHelpers';
 
 import { createContext } from 'react';
-
 export const FilmContext = createContext();
-
-import { getFilmData } from 'helpers/filmHelpers';
 
 export default function FilmDetails(props) {
   return (
@@ -22,7 +20,7 @@ export default function FilmDetails(props) {
 
 export async function getStaticProps({ params }) {
   const filmId = +params.filmId;
-  // swapi give wrong sort on this, so I have to convert it to the correct one
+  // swapi has wrong sort on this, so I converted it to the correct one
   const { data: film } = await swapi.get(
     `/films/${filmId <= 3 ? filmId + 3 : filmId - 3}/`
   );

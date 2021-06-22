@@ -1,22 +1,4 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-:root {
-  font-size: 62.5%;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'biko', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+// local font
 @font-face {
   font-family: 'jedi';
   src: url('/fonts/Starjedi.ttf');
@@ -35,6 +17,25 @@ body {
 @font-face {
   font-family: 'biko';
   src: url('/fonts/Biko_Regular.otf');
+}
+
+:root {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'biko', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {

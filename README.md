@@ -25,5 +25,3 @@
 - Use SCSS for styling
 - Use Flexbox or CSS grid for layouts - avoid Bootstrap etc
 - Host the finished project on Vercel or similar
-
-**I finished this Challenge less than one day🚀**

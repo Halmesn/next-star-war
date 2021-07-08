@@ -15,12 +15,6 @@ export default function HomeContent({ films }) {
   const [searchResults, setSearchResults] = useState(null);
   const [searchInput, setSearchInput, debounceInput] = useDebounceInput();
 
-  // debounceInput
-  useEffect(() => {
-    const timer = setTimeout(() => setDebounceInput(searchInput), 400);
-    return () => clearTimeout(timer);
-  }, [searchInput]);
-
   useEffect(() => {
     const getSearchResults = async () => {
       const { data } = await swapi.get(`/films/?search=${debounceInput}`);

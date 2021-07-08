@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 
 export default function useLocalStorage() {
-  const [favorites, setFavorites] = useState(
-    () => JSON.parse(window?.localStorage.getItem('sw-favorites')) || []
-  );
+  const [favorites, setFavorites] = useState(() => {
+    if (typeof window !== 'undefined')
+      JSON.parse(window.localStorage.getItem('sw-favorites')) || [];
+    return [];
+  });
 
   useEffect(
     () =>

@@ -4,24 +4,16 @@ import FilmCard from 'components/home/FilmCard';
 import { SearchIcon } from 'components/icons';
 
 import swapi from '/axios';
+import useLocalStorage from 'hooks/useLocalStorage';
 
 import { useState, useEffect } from 'react';
 
 export default function HomeContent({ films }) {
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useLocalStorage();
 
   const [searchResults, setSearchResults] = useState(null);
   const [searchInput, setSearchInput] = useState('');
   const [debounceInput, setDebounceInput] = useState(searchInput);
-
-  // get local favorite list
-  useEffect(
-    () =>
-      setFavorites(
-        JSON.parse(window.localStorage.getItem('sw-favorites')) || []
-      ),
-    []
-  );
 
   // debounceInput
   useEffect(() => {

@@ -25,12 +25,10 @@ export default function FilmCard({ film, favorites, setFavorites }) {
     if (!isStared) {
       newFavorites.push(film);
       setFavorites(newFavorites);
-      localStorage.setItem('sw-favorites', JSON.stringify(newFavorites));
     } else {
       const spliceIndex = newFavorites.indexOf(film);
       newFavorites.splice(spliceIndex, 1);
       setFavorites(newFavorites);
-      localStorage.setItem('sw-favorites', JSON.stringify(newFavorites));
     }
 
     setIsStared(!isStared);

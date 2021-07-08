@@ -5,6 +5,7 @@ import { SearchIcon } from 'components/icons';
 
 import swapi from '/axios';
 import useLocalStorage from 'hooks/useLocalStorage';
+import useDebounceInput from 'hooks/useDebounceInput';
 
 import { useState, useEffect } from 'react';
 
@@ -12,8 +13,7 @@ export default function HomeContent({ films }) {
   const [favorites, setFavorites] = useLocalStorage();
 
   const [searchResults, setSearchResults] = useState(null);
-  const [searchInput, setSearchInput] = useState('');
-  const [debounceInput, setDebounceInput] = useState(searchInput);
+  const [searchInput, setSearchInput, debounceInput] = useDebounceInput();
 
   // debounceInput
   useEffect(() => {

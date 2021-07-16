@@ -1,5 +1,5 @@
 <h1 align="center"><img alt="star war saber" src="https://github.com/Halmesn/next-star-war/blob/main/public/misc/saber.gif"/>Next.StarWar</h1>
-<h3 align="center">A code test for an interview.</h3>
+<h3 align="center">An interview code test.</h3>
 
 <div align="center">
     <img alt="Project screenshot" src="https://github.com/Halmesn/next-star-war/blob/main/public/misc/screenshot.png" />

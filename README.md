@@ -1,5 +1,5 @@
-<h1 align="center"><img alt="star war saber" src="https://github.com/Halmesn/next-star-war/blob/main/public/misc/saber.gif" /> <a href="https://next-star-war.vercel.app/">Next.StarWar</a></h1>
-<h3 align="center">A code test I did.</h3>
+<h1 align="center"><img alt="star war saber" src="https://github.com/Halmesn/next-star-war/blob/main/public/misc/saber.gif"/>Next.StarWar</h1>
+<h3 align="center">A code test for an interview.</h3>
 
 <div align="center">
     <img alt="Project screenshot" src="https://github.com/Halmesn/next-star-war/blob/main/public/misc/screenshot.png" />
